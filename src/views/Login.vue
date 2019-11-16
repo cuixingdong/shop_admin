@@ -106,6 +106,9 @@ export default {
       height: 120px;
       box-shadow: 0 1px 5px #ccc;
     }
+     .el-button:last-child {
+      margin-left: 80px;
+    }
   }
 }
 </style>
