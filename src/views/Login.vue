@@ -48,32 +48,28 @@ export default {
     },
     login () {
       this.$refs.form.validate(valid => {
-        if (valid) {
-          console.log('该发送ajax请求了')
-          axios({
-            method: 'post',
-            url: 'http://localhost:8888/api/private/v1/login',
-            data: this.form
-          }).then(res => {
-            console.log(res.data)
-            if (res.data.meta.status === 200) {
-              this.$router.push('/home')
-            } else {
-              alert('登录失败了')
-            }
-          }).catch(error => {
-            console.log(error)
-          })
-        } else {
-          return false
-        }
+        if (!valid) return false
+        axios({
+          method: 'post',
+          url: 'http://localhost:8888/api/private/v1/login',
+          data: this.form
+        }).then(res => {
+          // console.log(res.data)
+          if (res.data.meta.status === 200) {
+            localStorage.setItem('token', res.data.data.token)
+            this.$router.push('/home')
+            this.$message.success('登陆成功')
+          } else {
+            this.$message.error('用户名或密码错误')
+          }
+        })
       })
     }
   }
 }
 </script>
 
-<style lang="less">
+<style lang="less" >
 .login {
   height: 100%;
   width: 100%;
