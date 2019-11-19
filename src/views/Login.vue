@@ -20,7 +20,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 
 export default {
   data () {
@@ -47,22 +46,16 @@ export default {
       // console.log(this.$refs.form)
     },
     login () {
-      this.$refs.form.validate(valid => {
+      this.$refs.form.validate(async valid => {
         if (!valid) return false
-        axios({
-          method: 'post',
-          url: 'http://localhost:8888/api/private/v1/login',
-          data: this.form
-        }).then(res => {
-          // console.log(res.data)
-          if (res.data.meta.status === 200) {
-            localStorage.setItem('token', res.data.data.token)
-            this.$router.push('/home')
-            this.$message.success('登陆成功')
-          } else {
-            this.$message.error('用户名或密码错误')
-          }
-        })
+        const { meta, data } = await this.$axios.post('login', this.form)
+        if (meta.status === 200) {
+          localStorage.setItem('token', data.token)
+          this.$router.push('/home')
+          this.$message.success('登陆成功')
+        } else {
+          this.$message.error('用户名或密码错误')
+        }
       })
     }
   }

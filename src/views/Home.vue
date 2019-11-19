@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+
 export default {
   data () {
     return {
@@ -52,34 +52,25 @@ export default {
     }
   },
 
-  created () {
-    axios({
-      method: 'get',
-      url: 'http://localhost:8888/api/private/v1/menus',
-      headers: {
-        Authorization: localStorage.getItem('token')
-      }
-    }).then(res => {
-      if (res.data.meta.status === 200) {
-        this.menuList = res.data.data
-      }
-    })
+  async created () {
+    const { meta, data } = await this.$axios.get('menus')
+    if (meta.status === 200) {
+      this.menuList = data
+    }
   },
 
   methods: {
-    logout () {
-      this.$confirm('你确定要退出吗？', '提示', {
-        type: 'warning'
-      })
-        .then(() => {
-          this.$router.push('/login')
-          localStorage.removeItem('token')
-
-          this.$message.success('退出成功')
+    async logout () {
+      try {
+        await this.$confirm('你确定要退出吗？', '提示', {
+          type: 'warning'
         })
-        .catch(() => {
-          this.$message.info('操作取消')
-        })
+        this.$router.push('/login')
+        localStorage.removeItem('token')
+        this.$message.success('退出成功')
+      } catch {
+        this.$message.info('操作取消')
+      }
     }
   },
 

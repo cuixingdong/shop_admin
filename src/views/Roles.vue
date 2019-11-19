@@ -1,5 +1,5 @@
 <template>
-    <div class="rights">角色组件</div>
+    <div class="roles">角色组件</div>
 </template>
 
 <script>
