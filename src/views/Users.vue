@@ -17,7 +17,7 @@
       <el-table-column prop="email" label="邮箱"></el-table-column>
       <el-table-column prop="mobile" label="电话"></el-table-column>
 
-      <el-table-column prop="mobile" label="用户状态">
+      <el-table-column  label="用户状态">
         <template v-slot="{row}">
           <el-switch
             v-model="row.mg_state"
@@ -28,7 +28,7 @@
         </template>
       </el-table-column>
 
-      <el-table-column prop="mobile" label="用户状态">
+      <el-table-column label="操作">
         <template v-slot="{row}">
           <el-button type="primary" icon="el-icon-edit" @click ="showEdit(row)" circle plain size="mini"></el-button>
           <el-button
