@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+
+Object.prototype.clone = function(){
+       var res = this.constructor == Array? []: {}
+       for( i in this){
+         res[i] = typeof this[i] == "object"? this[i].clone() :this[i]
+       }
+       return res
+}
+        
+     //第一个参数不传（false是不能够显示的写出来的）默认为false，是浅拷贝。传true为深拷贝。
+
+
+//newObject 即为深拷贝出来的对象
+var newObject = $.extend(true , {} , object);
+
+
+
+
+function deepClone(obj){
+    var newObj = obj.push?[]:{}
+    for(var i in obj){
+        if(typeof obj[i] === 'object'){
+            newObj[i] = deepClone(obj[i])
+        }else{
+            newObj[i] = obj[i]
+        }
+    }
+    return newObj
+}
+
+
+
+
+
+
+
+        
+        </script>
+</body>
+</html>

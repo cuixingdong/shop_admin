@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      function foo() {
+        var num = 123;
+       function fn() {
+            return num
+        }
+        return fn
+    }
+    // var m=foo()
+    // var f=m()
+    console.log(foo()())
+    //输出的值为123，这样就可以访问到函数内部变量num。
+    
+    function foo(){
+        var num = 122
+        function fn(){
+            return num
+        }
+        return fn
+    }
+
+
+
+
+
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          var arrA = [];
+var arrB = [];
+var arrC = [];
+ 
+//求出A数组的值
+for(var i = 0; i < 10; i++) {
+    arrA.push(i);
+}
+//A排序
+arrA.sort(function(a, b) {
+    return Math.random() -0.5
+})
+console.log(arrA)
+//求出B数组的值
+for(var i = 0; i < arrA.length - 2; i++) {
+    arrB[arrA[i]] = arrA[i];
+    console.log(arrB);
+ 
+}　　　　//如果B数组里的第i项为undefind，打印出i放在arrC
+for(var i = 0; i<arrB.length; i++){
+    if(arrB[i] == undefined){
+        arrC.push(i);
+    }
+}
+
+console.log(arrC);
+        
+        </script>
+</body>
+</html>

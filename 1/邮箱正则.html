@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+<input type="text" id="txt">
+<input type="button" id="btn" value="校验">
+    <script>
+//邮箱的地址规则：数字、字母、下划线 + @ + 数字、英文 + . +英文（长度是2-4）
+window.onload = function()
+{
+    var oTxt = document.getElementById("txt");
+    var oBtn = document.getElementById("btn");
+    oBtn.onclick = function()
+    {
+        var re = /^\w+@[a-z0-9]+\.[a-z]{2,4}$/;
+        if(re.test(oTxt.value))
+        {
+            alert("你写对了");
+        }
+        else
+        {
+            alert("你写错了");
+        }
+    }
+}
+
+var reg = /^\w+@[a-z0-9]+\.[a-z]{2,4} $/
+
+var reg = /^\w+@[a-z0-9]+\.[a-z]{2,4}$/
+ </script>
+</body>
+</html>

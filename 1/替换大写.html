@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var string = "get-element-by-id";
+        // var arr = string.split("-");
+        //  console.log(arr)
+// function combo(msg) {
+//   var arr = msg.split("-"); //split("-")以-为分隔符截取字符串，返回数组
+
+//   for (var i = 1; i < arr.length; i++) {
+//     arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+//   }
+  
+//   msg = arr.join(""); //join()返回字符串
+//   return msg;
+// }
+// console.log(combo(string));
+
+// for (var i = 1; i <= 3; i++) {
+//   setTimeout(() => {
+//     // setTimout在for里面是异步执行的，在延迟输出的时候，i的值已经是4了
+//     console.log(i);
+//   }, 0);
+// }
+
+
+for (var i = 1; i <= 3; i++) {
+  setTimeout((i=> {
+    // setTimout在for里面是异步执行的，在延迟输出的时候，i的值已经是4了
+    console.log(i);
+  })(i), 0)
+}
+
+
+for (var i = 1; i <= 3; i++) {
+  setTimeout( (i => {
+      console.log(i);
+    })(i), 0 );
+}
+
+for (var i = 1; i <= 3; i++) {
+  setTimeout( (() => {
+      var j = i;
+      return function() {
+        console.log(j);
+      };
+    })(),0 );
+}
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        
+
+        var range = function(min,max,step){
+            var arr = [];
+            if( typeof(min) == 'number' && typeof(max) == 'number' ){
+                if( min < max ){
+                    for(var i = min; i<=max; i=i+step){
+                        arr.push(i) ;
+                    }
+                }
+            }
+        
+            if( typeof(min) == 'string' && typeof(max) == 'string'){
+                var minIndex = min.charCodeAt();
+                var maxIndex = max.charCodeAt();
+                if(minIndex < maxIndex){
+                    for(var i = minIndex;i<=maxIndex;i=i+step){
+                        arr.push(String.fromCharCode(i))
+                    }
+                }
+            }
+            return arr ;
+        }
+        console.log(range('A','F',2))
+    </script>
+</body>
+</html>

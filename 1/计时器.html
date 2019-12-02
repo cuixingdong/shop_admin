@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 实现法一（setTimeout()方法）：
+
+        // function count(start, end) {
+        //     if (start <= end) {
+        //         console.log(start++);
+        //         st = setTimeout(function () {
+        //             count(start, end);
+        //         }, 100);
+        //     }
+        //     return {
+        //         cancel: function () {
+        //             clearTimeout(st);
+        //         }
+        //     };
+        // }
+        // count(1, 10);
+
+        function count(start, end) {
+            console.log(start++);
+            var timer = setInterval(function () {
+                if (start <= end) {
+                    console.log(start++);
+                }
+            }, 100);
+            return {
+                cancel: function () {
+                    clearInterval(timer);
+                }
+            };
+        }
+        count(1, 10);
+
+    </script>
+</body>
+
+</html>

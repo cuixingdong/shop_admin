@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+
+// 捕捉链接的点击事件
+$('#btn').click(function(){
+    // 取得要提交的参数
+    var my_val = $.trim($('#ipt').val());
+    // 取得要提交页面的URL
+    var action = $(this).attr('href');
+    // 创建Form
+    var form = $('<form></form>');
+    // 设置属性
+    form.attr('action', action);
+    form.attr('method', 'post');
+    // form的target属性决定form在哪个页面提交
+    // _self -> 当前页面 _blank -> 新页面
+    form.attr('target', '_self');
+    // 创建Input
+    var my_input = $('<input type="text" name="my_name" />');
+    my_input.attr('value', my_val);
+    // 附加到Form
+    form.append(my_input);
+    // 提交表单
+    form.submit();
+    // 注意return false取消链接的默认动作
+    return false;
+});
+
+
+$('#btn').click(function(){
+      var my_val = $.trim($('#inp').val())
+      var form = $('<form></form>')
+      form.attr('action','http://127.0.0.1/save.php')
+      form.attr('method','post')
+      var my_input = $('<input type = "text" name="input1"/> ')
+      my_input.attr('value',my_val)
+      form.append(my_input)
+      form.appendTo("body"); 
+        form.hide()
+        form.submit()
+})
+
+
+
+        
+        </script>
+</body>
+</html>

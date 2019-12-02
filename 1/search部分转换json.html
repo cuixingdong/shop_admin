@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+      
+    <script>
+          var url = 'https://so.csdn.net/so/search/s.do?q=ws&t=blog&u=maid_04'
+//     function getRequest(){
+        
+//    var url='?q=ws&t=blog&u=maid_04'   //location.search;
+//    var jsonList={};
+//    if(url.indexOf("?")!=-1){
+//    var str=url.slice(1)
+//    var strs=str.split("&");
+//    console.log(strs)
+//    for(var i=0;i<strs.length;i++){
+//    jsonList[strs[i].split("=")[0] ]= strs[i].split("=")[1];
+//  }
+// }
+// return jsonList;
+// }
+// console.log(getRequest());
+    
+function getRequest(){
+      var url = '?q=ws&t=blog&u=maid_04' 
+      var jsonList = {}
+      if(url.indexOf ('?')!= -1){
+            var str = url.slice(1)
+            var arr = str.split('&')
+        //    console.log(JSON.parse(JSON.stringify(arr)) )
+             for(var i = 0;i<arr.length;i++){
+                 jsonList[arr[i].split("=")[0]] = arr[i].split("=")[1]
+             }
+
+      }
+      return jsonList
+}
+    
+    </script>
+</body>
+</html>

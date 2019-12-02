@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //声明函数：计算阶乘
+//1.边界条件(跳出条件)
+//2.调用自身  5*4*3*2*1
+// function jie(n){
+//   if(n == 1){//跳出条件
+//      return 1;
+//   }
+//   return n*jie(n-1); //5*jie(4)
+// }
+// //调用:计算5的阶乘
+// var result = jie(5);
+// console.log(result);
+
+
+
+// function fac(n){
+//     if(n ===1){
+//         return 1
+//     }
+//     return n*fac(n-1)
+// }
+
+function fac(n){
+return n>1? n*fac(n-1):1;
+}
+console.log(fac(4))
+
+// function fac(n){
+//    return n>1? n*fac(n-1):1
+// }
+
+
+        
+        
+        
+        </script>
+</body>
+</html>

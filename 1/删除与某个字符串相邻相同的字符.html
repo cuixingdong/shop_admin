@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    // function getNS(str) {
+    //         let arr = [];
+    //         let newStr = "";
+    //         for (let i = 0; i < str.length; i++) {
+    //             if ( newStr[newStr.length - 1] != str[i]) {
+    //                 arr.push(str[i]);
+    //                 newStr = arr.join("");
+    //             }
+    //         }
+    //         // console.log(newStr);
+    //         return newStr;
+    //     }
+    //     const str = "bvvcddsadffxcxxx你你++好";
+    //     console.log(getNS(str));
+
+
+        
+
+  
+// function getStr(str){
+//     var res = "",str1
+//     for(var i=0;i<str.length;i++){
+//         if(str.charAt(i)!==str1){
+//            str1 = str.charAt(i)
+//            res+=str1
+//         }
+//     }
+//     return res
+// }
+// var str = "aabbc11asd你你++好"
+// console.log(getStr(str))
+
+
+//js字符串去除全部重复字符，并把最终字符串排序
+
+
+  
+  //去除相邻重复字符串
+function getStr(str){
+    var cc = str.match(/(.)\1+/g)
+    for(var i=0;i<cc.length;i++){
+      c= cc[i].substring(0,1)
+      str = str.replace(cc[i],c)
+   }
+   return str
+}
+var str = "aabbc11asd你你++好"
+console.log(getStr(str))
+
+
+//去除全部重复字符
+function getStr(str){
+str = str.split('').sort().join('')
+    var cc = str.match(/(.)\1+/g)
+     for(var i=0;i<cc.length;i++){
+          c = cc[i].substring(0,1)
+          str = str.replace(cc[i],c)
+     }
+     return str
+}
+
+
+    
+    </script>
+</body>
+</html>

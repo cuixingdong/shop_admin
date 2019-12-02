@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <button id="btn">点击我</button>
+
+    <script>
+  
+
+
+
+//   var iNum = 0;
+// for (var i = 1; i < 10; i++) {
+//   if (i % 5 == 0) {
+//     continue;
+//   }
+//   iNum++;
+// }
+// console.log(iNum);
+
+// var arrA = []
+// var arrB= []
+// var arrC = []
+// for(var i=0;i<10;i++){
+//   arrA.push(i)
+// }
+// arrA.sort((a,b)=>{
+//        return Math.random()-0.5
+// })
+// // console.log(arrA)
+
+// for(var i=0;i<arrA.length-2;i++){
+//   arrB[arrA[i]] = arrA[i]
+// }
+
+// for(var i=0;i<arrB.length;i++){
+//      if(arrB[i] == undefined){
+//          arrC.push(i)
+//      }
+// }
+
+
+// function f(x,a,b){
+//        var temp = Math.min(Math.max(x-100,0),1)
+//        return a*temp + b*(1-temp)
+// }
+// console.log(f(120,2,3))
+
+// var temp = Math.min(Math.max(x-100,0),1)
+
+// var arr = [5,2,3,6,8,6,5,4,7,1,9]
+// a = new Set(arr)
+// console.log(a)
+// let = [...new Set(arr)]
+// console.log(let)
+
+// var new1 = let.sort((a,b)=>b-a)
+// console.log(new1)
+
+// function getStr(str){
+//     var res = "",str1
+//     for(var i=0;i<str.length;i++){
+//         if(str.charAt(i)!==str1){
+//            str1 = str.charAt(i)
+//            res+=str1
+//         }
+//     }
+//     return res
+// }
+
+
+// var s = "aabbc11asd你你++好"
+// var cc = s.match(/(.)\1+/g)
+// console.log(cc)
+// for(var i=0;i<cc.length;i++){
+//       c= cc[i].substring(0,1)
+//       s = s.replace(cc[i],c)
+// }
+// console.log(s)
+
+
+// function getStr(str){
+// str = str.split('').sort().join('')
+//     var cc = str.match(/(.)\1+/g)
+//      for(var i=0;i<cc.length;i++){
+//           c = cc[i].substring(0,1)
+//           str = str.replace(cc[i],c)
+//      }
+//      return str
+// }
+
+// var str = "aabbc11asd你你++好"
+// console.log(getStr(str))
+
+
+//   面试题1
+// var num = 123;
+// function f1() {
+//   console.log(num); // 123
+// }
+// function f2() {
+//   var num = 456;
+//   f1();
+// }
+// f2();
+
+
+// //面试题1  变式
+// var num = 123;
+// function f1() {
+//   console.log(num); // 456
+// }
+// f2();
+// function f2() {
+//   num = 456; //这里是全局变量
+//   f1();
+// }
+// console.log(num); // 456
+
+
+// function sayHi() {
+//   console.log("hi");
+// }
+
+// function threeTimes(fn) {
+//   let times = 0;
+//   return () => {
+//     if (times++ < 3) {
+//       fn();
+//     }
+//   };
+// }
+
+// const newFn = threeTimes(sayHi);
+// newFn();
+// newFn();
+// newFn();
+// newFn();
+// newFn(); // 后面两次执行都无任何反应
+
+
+// function add(x,y){
+// 	var sum = x;
+// 	if(y){
+// 		return (sum + y);
+// 	}else{
+// 		var add1 = function(z){
+// 			return (sum + z);
+// 		}
+// 		return add1;
+// 	}
+// }
+
+// // var add2 = add(1)(2);
+// var add2 = add(1,2);
+// console.log(add2);
+
+
+
+
+
+// var a = 1;
+// function test() {
+//     a = 1;
+//   console.log(a);
+//   var a
+// }
+// test();
+
+// var a = 1;
+// function test() {
+//     var a 
+//   console.log(a);
+//  a=1
+// }
+// test();
+
+// console.log(a); //是一个函数
+// var a = 3;
+// function a() {}
+// console.log(a); ////3
+
+// abc();
+// var abc = function(){console.log("abc")}
+
+// function fn(a) {
+//   console.log(a);
+//   var a = 2;
+//   function a() {}
+//   console.log(a);
+// }
+
+// fn(1);
+
+function deepClone(obj){
+    var newObject = obj.push? []:{}
+      for(var i in obj){
+          if(typeof obj[i] === 'object'){
+              newObject[i] = deepClone(obj[i])
+          }else{
+              newObject[i] = obj[i]
+          }
+      }
+
+}
+
+
+
+
+</script>
+</body>
+</html>

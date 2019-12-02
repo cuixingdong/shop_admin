@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // specify('hello,world')//=>'h,e,l,l,o,w,o,r,l,d'，实现specify函数。
+    function specify(str){
+    var tempArray =  Array.prototype.filter.call(str,value=>{
+        return value >= 'A' &&  value <= 'z' //&& value != "_";
+    });
+    return tempArray.join(",");
+}
+
+console.log(specify("hello,World")); //h,e,l,l,o,W,o,r,l,d
+    
+    </script>
+</body>
+</html>

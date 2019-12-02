@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var inputLists = document.querySelectorAll("input");
+        // for (let i = 0; i < inputLists.length; i++) {
+        //     inputLists[i].οnclick = function () {
+        //         alert(i + 1);
+        //     };
+        // }
+
+        for (let i = 1; i <= 10; i++) { 
+            var btn = document.createElement("button")
+             btn.innerText = i
+             btn.onclick = function () {
+                  alert(i) 
+                }
+             document.body.appendChild(btn)
+             }
+
+
+
+
+    </script>
+</body>
+
+</html>

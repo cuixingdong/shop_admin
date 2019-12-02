@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="form1" οnsubmit="return foo();">
+    <input type="radio" name="radioGroup"/>
+    <input type="radio" name="radioGroup"/>
+    <input type="radio" name="radioGroup"/>
+    <input type="radio" name="radioGroup"/>
+    <input type="radio" name="radioGroup"/>
+    <input type="submit"/>
+    </form>
+
+<script>
+
+        function foo() {
+    //在此处添加代码
+   
+    var radios = document.getElementsByName("radioGroup");//表单下面的所有的单选框
+    for(var i =0 ;i<radios.length;i++){
+        if(radios[i].checked){
+            alert('你选择的是第' + (i + 1) + '个单选框' );
+        } 
+    }
+
+ return false;
+    }
+
+
+    // var radios =document.getElementsByName('radioGroup')
+    // for(var i=0;i<radios.length;i++){
+    //     if(radios[i].checked){
+    //         alert('选择的是第'+(i+1)+ '个单选框')
+    //     }
+    // }
+</script>
+
+</body>
+</html>

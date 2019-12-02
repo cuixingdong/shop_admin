@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//      function add(a) {
+//   return function(b) {
+//     return function(c) {
+//             return a + b + c;
+//         }
+//     }
+// }
+// console.log(add(1)(2)(3) )
+
+
+
+
+
+
+
+
+ function add(a, b) {
+  if (b === undefined) {
+    return function(x) {
+      return a + x;
+    }
+  }else{
+    return a + b
+  }
+
+
+}
+console.log(add(1)(2) )
+console.log(add(1,2) )
+
+
+
+function add(a,b){
+    if(b === undefined){
+        return x=> a+x
+    }
+     return a+b
+}
+    
+    </script>
+</body>
+</html>

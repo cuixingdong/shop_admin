@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        	var arr = [1, 2, 3, 4, 4, 4, 4, 4, 4, 4, 5, 6, 7, 8, 9];
+		// 遍历
+		// for (var i = 0; i < arr.length; i++) {
+		// 	// 判断
+		// 	if (arr[i] === 4) {
+		// 		arr.splice(i, 1); // 此时， 删除的那一项会与原数组下标产生差异， 后面的所有成员都会往前移动。
+		// 		i--;  // 有了这条代码 才可以保证与数组中的每一个成员的下标一一对应。
+		// 	}
+		// }
+		// console.log(arr)
+
+
+// 2 从数组的末尾一项开始遍历
+for (var i = arr.length-1; i >= 0; i--) {
+  if (arr[i] === 4) {
+    arr.splice(i, 1);
+  }
+}
+console.log(arr);
+        
+
+
+        
+        </script>
+</body>
+</html>

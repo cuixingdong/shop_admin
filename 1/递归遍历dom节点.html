@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  
+
+            <div>
+                    <p>
+                      <span><a></a></span>
+                      <span><a></a></span>
+                    </p>
+                    <ul>
+                      <li></li>
+                      <li></li>
+                    </ul>
+                  </div>
+    
+            
+    <script>
+//  function deepTraversal(node,nodeList) {  
+//     if (node) {    
+//             nodeList.push(node);    
+//             var children = node.children;    
+//             for (var i = 0; i < children.length; i++) 
+//       //每次递归的时候将  需要遍历的节点  和 节点所存储的数组传下去
+//                 deepTraversal(children[i],nodeList);    
+//         }    
+//     return nodeList;  
+// }  
+
+// var div = document.querySelector('div')
+// console.log(deepTraversal(div,nodeList=[]))
+
+function  search(node,nodeList){
+        
+        if(node){
+             nodeList.push(node)
+             for(var i=0;i<node.children.length;i++)
+                search(node.children[i],nodeList)
+        }
+        return nodeList
+   }
+   
+   var div  = document.querySelector('div')
+   console.log(search(div,[]))
+    
+    </script>
+</body>
+</html>

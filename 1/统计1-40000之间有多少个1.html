@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+         function getOne(){
+           var count = 0; //定义初始个数
+           for(var i = 1; i <= 11; i++) { //从1到400
+               for(var j = 0; j < i.toString().length; j++) { //把每个数拆分成单个数字，如123拆分成"1","2","3"
+                   if(i.toString()[j] === "1") //如果包含1
+                       count++; //统计1的个数
+               }
+           }
+            return count;
+             }
+         console.log(getOne()); //弹出结
+
+
+
+
+                //  function getOne() {
+                //      var count = 0;
+                //      for (var i = 1; i <= 11; i++) {
+                //          var s = i.toString();
+                //          for (var j = 0; j < s.length; j++) {
+                //              if (s.indexOf("1", j) != -1) {
+                //                  count++;
+                //              }
+                //          }
+                //      }
+                //      return count;
+                //  }
+                         
+                //  console.log(getOne())
+
+
+                // 考虑到性能的写法
+function getCountForNumberOfKey(num, key) {
+ 
+ // if (key > 9 || key == null || isNaN(key)) return -1;
+
+ // 停止递归的条件
+ if (num < key) return 0;
+ if (num < key + 10 && num >= key) return 1;
+
+ var str = num.toString(),
+ startNum = +str[0],
+ len = str.length - 1,
+ lenNum = Math.pow(10, len),
+ remainder = num % lenNum,
+ curCount = startNum * getCountForLen(len) + getCountForNumberOfKey(remainder, key);
+
+ return curCount + (startNum < key ?
+                 0 :
+                 key == startNum ?  remainder + 1 : lenNum);
+}
+
+function getCountForLen(len) {
+
+ if (getCountForLen[len]) return getCountForLen[len];
+ if (1 == len) return 1;
+
+ return getCountForLen[len] = Math.pow(10, len - 1) + 10 * getCountForLen(len - 1);
+}
+
+console.time("getCountForNumberOfKey");
+console.log('getCountForNumberOfKey(): ', getCountForNumberOfKey(4000000000000000000, 1));
+console.timeEnd("getCountForNumberOfKey");
+
+
+    
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

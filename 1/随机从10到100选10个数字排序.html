@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+
+    <body>
+        <script type="text/javascript">
+            //首先创建一个空数组，用来放10个数字
+            var Array = [];
+            //接下来定义一个函数，这个函数是写10~100的随机数，我们现在把他封装成一个函数
+            function getRandom(num1,num2){
+                var transition = num2 - num1 + 1;//这里面的加1是为了能够取到100
+                var res = Math.floor(Math.random() * transition + num1);
+                return res;
+            }
+            //上面的代码已经获取了num1~num2的随机数
+            //下面是遍历出10个随机数,并把十个数用push放法放到新定义的数组里面
+            for(var i = 0; i < 10; i++){
+                Array.push(getRandom(10,100));
+            }
+            //最后用sort方法进行排序
+            Array.sort(function(a,b){
+                return a > b;
+            })
+            //打印数组Array
+            console.log(Array);
+
+        var arr = []
+      function getRandom(num1,num2){
+        var shu = num2-num1+1
+       var res = Math.floor(Math.random()*shu +num1)
+       return res
+  }
+
+  for(var i = 0 ;i<10;i++){
+      arr.push(getRandom(10,100))
+  }
+  console.log(arr)
+  arr.sort((a,b)=>{
+       return a-b
+})
+console.log(arr)
+
+        </script>
+    </body>
+
+</html>
