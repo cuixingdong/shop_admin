@@ -8,12 +8,19 @@
 </head>
 <body>
     <script>
-var str1 = "level"
-  function isFn(str) { 
-      console.log(str.split('').reverse().join('') === str)
-    }
-  isFn(str1)
-    
-    </script>
+          var name='Tom'
+        let obj = {
+
+  greeting(){
+    console.log('Hello',this.name)
+  }
+}
+let greeting = obj.greeting
+ greeting()
+
+
+    // obj.greeting()
+
+        </script>
 </body>
 </html>
